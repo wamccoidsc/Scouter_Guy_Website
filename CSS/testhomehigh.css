@@ -1,0 +1,205 @@
+/* General Styling */
+:root {
+  --primary-color: #2c3e50; /* Dark Blue */
+  --secondary-color: #3498db; /* Bright Blue */
+  --background-color: #ecf0f1; /* Light Gray */
+  --text-color: #34495e; /* Dark Gray */
+  --highlight-color: #2ecc71; /* Green for active page */
+  --sidebar-width: 250px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--primary-color);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable scrolling for long menus */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #34495e;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 15px;
+  border-radius: 50%; /* Optional: make logo round */
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a,
+.nav-links li summary {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer; /* For summary elements */
+}
+
+.nav-links li a:hover,
+.nav-links li summary:hover {
+  background-color: var(--secondary-color);
+}
+
+.nav-links li a i,
+.nav-links li summary i {
+  margin-right: 15px;
+  width: 20px; /* Aligns text */
+  text-align: center;
+}
+
+/* Active Page Highlighting */
+.nav-links li a.active {
+  background-color: var(--highlight-color);
+  color: white;
+  font-weight: bold;
+}
+
+/* Dropdown Styling */
+.nav-links .has-dropdown details {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide default arrow icon for details summary */
+.nav-links .has-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+.nav-links .has-dropdown summary::marker {
+  display: none;
+}
+
+/* Custom dropdown arrow */
+.nav-links .has-dropdown summary::after {
+  content: "\25B6"; /* Right-pointing triangle */
+  font-size: 0.7em;
+  position: absolute;
+  right: 20px;
+  transition: transform 0.2s ease;
+}
+
+.nav-links .has-dropdown details[open] > summary::after {
+  transform: rotate(90deg); /* Down-pointing triangle when open */
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #34495e; /* Slightly darker than sidebar for sub-menu */
+}
+
+.submenu li a {
+  padding-left: 55px; /* Indent sub-menu items */
+  font-size: 0.95rem;
+}
+
+.submenu li a:hover {
+  background-color: #5d6d7e; /* Lighter hover for sub-menu */
+}
+
+.submenu li a.active {
+  background-color: var(
+    --highlight-color
+  ); /* Highlight for active sub-menu item */
+}
+
+/* Main Content Styling */
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default on large screens */
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  margin-right: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger menu */
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Scouter Guy</title>
+    <link
+      rel="stylesheet"
+      href="/Users/wamccoid/Documents/GitHub/Scouter_Guy_Website/CSS/testhomehigh.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <img
+          src="https://drive.google.com/thumbnail?id=1K81FtGcS1qI9pKvUFgfXjyE7aNHyoBo-"
+          alt="Logo"
+          class="logo"
+        />
+        <!--<span class="logo-text">The Scouter Guy</span>-->
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" data-page="home"
+            ><i class="fas fa-home"></i> Home</a
+          >
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <details>
+            <summary><i class="fas fa-cutlery"></i> Cooking</summary>
+            <ul class="submenu">
+              <li>
+                <a href="guides-knots.html" data-page="guides-knots"
+                  >Knot Tying</a
+                >
+              </li>
+              <li>
+                <a href="guides-camping.html" data-page="guides-camping"
+                  >Camping Basics</a
+                >
+              </li>
+              <li>
+                <a href="guides-firstaid.html" data-page="guides-firstaid"
+                  >First Aid</a
+                >
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <details>
+            <summary><i class="fas fa-fire"></i> Camping</summary>
+            <ul class="submenu">
+              <li>
+                <a href="gear-tents.html" data-page="gear-tents"
+                  >Tents & Shelters</a
+                >
+              </li>
+              <li>
+                <a href="gear-backpacks.html" data-page="gear-backpacks"
+                  >Backpacks</a
+                >
+              </li>
+              <li>
+                <a href="gear-cooking.html" data-page="gear-cooking"
+                  >Cooking Systems</a
+                >
+              </li>
+            </ul>
+          </details>
+        </li>
+
+        <li class="nav-item">
+          <a href="community.html" data-page="community"
+            ><i class="fas fa-user-friends"></i> Community</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="about.html" data-page="about"
+            ><i class="fas fa-info-circle"></i> About</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <header>
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <h1>Welcome to The Scouter Guy</h1>
+      </header>
+      <section class="content">
+        <h2>Your Adventure Starts Here</h2>
+        <p>
+          This is the main content area for the Home page. You can add your
+          articles, guides, and other information here. The navigation menu on
+          the left will help you explore the site. On mobile devices, the menu
+          will be hidden behind the hamburger icon.
+        </p>
+
+        <p>
+          To see the active page highlighting, click on different links in the
+          sidebar. The JavaScript will automatically detect the current page and
+          apply the 'active' class.
+        </p>
+      </section>
+    </main>
+
+    <script src="/Users/wamccoid/Documents/GitHub/Scouter_Guy_Website/Javascript/testhomehigh.js"></script>
+  </body>
+</html>

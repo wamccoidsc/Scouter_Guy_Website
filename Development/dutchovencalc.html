@@ -3,14 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Scouter Guy</title>
-    <link
+    <title>Dutch Oven Calc</title>
+    <!--<link
       rel="stylesheet"
       href="https://rawcdn.githack.com/wamccoidsc/Scouter_Guy_Website/refs/heads/main/CSS/testhomehigh.css"
-    />
+    />-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/Users/wamccoid/Documents/GitHub/Scouter_Guy_Website/CSS/dutchoven.css"
     />
   </head>
   <body>
@@ -96,20 +100,72 @@
         <button class="menu-toggle" id="menu-toggle">
           <i class="fas fa-bars"></i>
         </button>
-        <h1>Welcome to The Scouter Guy</h1>
+        <!--<h1>Dutch Oven Calculator</h1>-->
       </header>
-      <section class="content">
-        <h2>Your Adventure Starts Here</h2>
-        <p>
-          Welcome to your next adventure. The Scouter Guy was created by an avid
-          scouter who wanted to share his experiences and make exceptional tools
-          for scouters and everyone else alike.
-        </p>
+      <section class="content">      
+          <h1>🍳 Charcoal Calculator</h1>
+          <form id="calculator-form">
+            <div class="form-group">
+              <label for="oven-size">Dutch Oven Size (inches):</label>
+              <select id="oven-size" name="oven-size">
+                <option value="8">8"</option>
+                <option value="10">10"</option>
+                <option value="12" selected>12"</option>
+                <option value="14">14"</option>
+                <option value="16">16"</option>
+              </select>
+            </div>
 
-        <p>Come back often as this site will update often.</p>
-      </section>
-    </main>
+            <div class="form-group">
+              <label for="temperature">Desired Temperature (°F):</label>
+              <input
+                type="range"
+                id="temperature"
+                name="temperature"
+                min="250"
+                max="450"
+                value="350"
+                step="25"
+              />
+              <span id="temp-display">350°F</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cooking-method">Cooking Method:</label>
+              <select id="cooking-method" name="cooking-method">
+                <option value="bake" selected>Baking / Roasting</option>
+                <option value="stew">Simmering / Stewing</option>
+              </select>
+            </div>
+          </form>
+
+          <div id="results">
+            <h2>Charcoal Placement</h2>
+            <div class="result-display">
+              <div class="result-item">
+                <span class="result-label">Top</span>
+                <span id="top-coals" class="result-value">16</span>
+              </div>
+              <div class="result-item">
+                <span class="result-label">Bottom</span>
+                <span id="bottom-coals" class="result-value">8</span>
+              </div>
+              <div class="result-item total">
+                <span class="result-label">Total Briquettes</span>
+                <span id="total-coals" class="result-value">24</span>
+              </div>
+            </div>
+            <p class="note">
+              <strong>Note:</strong> This is an estimate. Results can vary based
+              on wind, humidity, and charcoal brand.
+            </p>
+          </div>
+        <!--</main>-->
+        <script src="/Users/wamccoid/Documents/GitHub/Scouter_Guy_Website/Javascript/dutchoven.js"></script>
+      
+    <!--</main>-->
 
     <script src="https://raw.githack.com/wamccoidsc/Scouter_Guy_Website/refs/heads/main/Javascript/testhomehigh.js"></script>
+    </main>
   </body>
 </html>
